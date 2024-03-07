@@ -7,6 +7,11 @@ import scrapy
 
 
 class ScrapydbaItem(scrapy.Item):
+    bilbillede = scrapy.Field()
+    bilpris = scrapy.Field()
+    bilmodel = scrapy.Field()
+    bilregnr = scrapy.Field()
+    bilårgang = scrapy.Field()
     # define the fields for your item here like:
     # name = scrapy.Field()
     pass
