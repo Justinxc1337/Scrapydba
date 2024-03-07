@@ -11,20 +11,19 @@ class BilspiderSpider(scrapy.Spider):
     name = "bilspider"
 
     def start_requests(self):
-        URL = 'https://www.dba.dk/peugeot-108-10-vti-69-active/id-510005139/'
+        URL = 'https://www.dba.dk/biler/biler/maerke-peugeot/modelpeugeot-108/'
         yield scrapy.Request(url=URL, callback=self.response_parser)
 
     def response_parser(self, response):
-        for selector in response.css('div.vip-matrix-data'):
+        for selector in response.css('td.mainContent'):
             yield {
-                'bilmodel': selector.css('dl > dt::attr(div)').extract_first(),
-                'bilmodelinfo': selector.css('dl > dd::attr(div)').extract_first(),
-                #'bilpris': selector.css('.price_color::text').extract_first()
+                'pris': selector.css('.price::text').extract_first(),
+                'dato': selector.css('.date::text').extract_first()
             }
 
-        #next_page_link = response.css('li.next a::attr(href)').extract_first()
-        #if next_page_link:
-            #yield response.follow(next_page_link, callback=self.response_parser
+        next_page_link = response.css('li.next a::attr(href)').extract_first()
+        if next_page_link:
+            yield response.follow(next_page_link, callback=self.response_parser)
             
 def bil_spider_result():
     biler_results = []
@@ -34,7 +33,7 @@ def bil_spider_result():
 
     dispatcher.connect(crawler_results, signal=signals.item_scraped)
     crawler_process = CrawlerProcess()
-    crawler_process.crawl(BilSpider)
+    crawler_process.crawl(BilspiderSpider)
     crawler_process.start()
     return biler_results
 
