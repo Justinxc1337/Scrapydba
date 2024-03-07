@@ -4,8 +4,9 @@ from scrapy import signals
 from scrapy.crawler import CrawlerProcess
 from scrapy.signalmanager import dispatcher
 
-#Test Car Peugeot 108 (active)
-#https://www.dba.dk/peugeot-108-10-vti-69-active/id-510005139/
+#Test spider for DBA Biler, (kan nemt ændres til anden hjemmeside eller produkt)
+#Test Bil Peugeot 108 (A.R)
+#https://www.dba.dk/biler/biler/maerke-peugeot/modelpeugeot-108/
 
 class BilspiderSpider(scrapy.Spider):
     name = "bilspider"
@@ -21,6 +22,7 @@ class BilspiderSpider(scrapy.Spider):
                 'dato': selector.css('.date::text').extract_first()
             }
 
+        #problem med at finde næste side, mulig grund li.next/næste (både og)
         next_page_link = response.css('li.next a::attr(href)').extract_first()
         if next_page_link:
             yield response.follow(next_page_link, callback=self.response_parser)
