@@ -19,7 +19,9 @@ class BilspiderSpider(scrapy.Spider):
         for selector in response.css('td.mainContent'):
             yield {
                 'pris': selector.css('.price::text').extract_first(),
-                'dato': selector.css('.date::text').extract_first()
+                'dato': selector.css('.date::text').extract_first(),
+                'lokation': selector.css('li > span::text').extract_first(),
+                'modelaar': selector.css('td[title="Modelår"]::text').extract_first()             
             }
 
         #problem med at finde næste side, mulig grund li.next/næste (både og)
@@ -44,7 +46,7 @@ if __name__ == '__main__':
     bil_data=bil_spider_result()
 
     keys = bil_data[0].keys()
-    with open('bil_data.csv', 'w', newline='') as output_file_name:
+    with open('bil_data.csv', 'w', newline='', encoding='utf-8') as output_file_name:
         writer = csv.DictWriter(output_file_name, keys)
         writer.writeheader()
         writer.writerows(bil_data)

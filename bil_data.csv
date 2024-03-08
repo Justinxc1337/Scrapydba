@@ -1,23 +1,64 @@
-pris,dato
-74.500 kr.,17. feb
-49.999 kr.,I g�r
-79.999 kr.,I g�r
-42.000 kr.,I g�r
-68.900 kr.,I g�r
-94.800 kr.,I g�r
-59.900 kr.,6. mar
-55.900 kr.,6. mar
-59.800 kr.,5. mar
-49.800 kr.,5. mar
-49.999 kr.,4. mar
-73.499 kr.,4. mar
-78.900 kr.,4. mar
-46.500 kr.,4. mar
-54.980 kr.,3. mar
-52.900 kr.,1. mar
-78.800 kr.,1. mar
-52.000 kr.,1. mar
-54.700 kr.,1. mar
-99.800 kr.,1. mar
-94.900 kr.,1. mar
-54.900 kr.,28. feb
+pris,dato,lokation,modelaar
+52.900 kr.,I dag,"
+    2880 Bagsværd
+",
+99.800 kr.,I dag,"
+    6270 Tønder
+",
+79.800 kr.,I dag,"
+    4700 Næstved
+",
+49.999 kr.,I går,"
+    8260 Viby J
+",
+42.000 kr.,I går,"
+    9620 Aalestrup
+",
+68.900 kr.,I går,"
+    9400 Nørresundby
+",
+94.800 kr.,I går,"
+    3630 Jægerspris
+",
+59.900 kr.,6. mar,"
+    7000 Fredericia
+",
+55.900 kr.,6. mar,"
+    9310 Vodskov
+",
+59.800 kr.,5. mar,"
+    4700 Næstved
+",
+49.800 kr.,5. mar,"
+    6710 Esbjerg V
+",
+49.999 kr.,4. mar,"
+    2605 Brøndby
+",
+73.499 kr.,4. mar,"
+    3520 Farum
+",
+78.900 kr.,4. mar,"
+    4300 Holbæk
+",
+46.500 kr.,4. mar,"
+    7800 Skive
+",
+54.980 kr.,3. mar,"
+    5464 Brenderup Fyn
+",
+78.800 kr.,1. mar,"
+    5500 Middelfart
+",
+54.900 kr.,1. mar,"
+    4300 Holbæk
+",
+94.900 kr.,1. mar,"
+    8300 Odder
+",
+54.900 kr.,28. feb,"
+    7120 Vejle Øst
+",
+63.900 kr.,28. feb,"
+    4000 Roskilde
+",
