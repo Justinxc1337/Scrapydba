@@ -7,6 +7,7 @@ from scrapy.signalmanager import dispatcher
 #Test spider for DBA Biler, (kan nemt ændres til anden hjemmeside eller produkt)
 #Test Bil Peugeot 108 (A.R)
 #https://www.dba.dk/biler/biler/maerke-peugeot/modelpeugeot-108/
+#ToDo, HTML site displaying csv data clean
 
 class BilspiderSpider(scrapy.Spider):
     name = "bilspider"
