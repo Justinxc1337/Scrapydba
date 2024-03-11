@@ -22,7 +22,7 @@ class BilspiderSpider(scrapy.Spider):
                 'pris': selector.css('.price::text').extract_first(),
                 'dato': selector.css('.date::text').extract_first(),
                 'lokation': selector.css('li > span::text').extract_first(),
-                'modelaar': selector.css('td[title="Modelår"]::text').extract_first()             
+                #'modelaar': selector.css('td[title="Modelår"]::text').extract_first()             
             }
 
         #problem med at finde næste side, mulig grund li.next/næste (både og)
