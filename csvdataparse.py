@@ -9,9 +9,10 @@ def read_csv(filename):
     return data
 
 def generate_html(data):
-    html_content = "<html><head><title>Data Output</title></head><body><table border='1'><tr><th>Pris</th><th>Dato</th><th>Lokation</th></tr>"
+    html_content = "<html><head><title>Data Output</title></head><body><table border='1'><tr><th>Model</th><th>Pris</th><th>Dato</th><th>Lokation</th></tr>"
     for item in data:
         html_content += "<tr>"
+        html_content += f"<td>{item['model']}</td>"
         html_content += f"<td>{item['pris']}</td>"
         html_content += f"<td>{item['dato']}</td>"
         html_content += f"<td>{item['lokation']}</td>"

@@ -18,12 +18,16 @@ class BilspiderSpider(scrapy.Spider):
 
     def response_parser(self, response):
         for selector in response.css('td.mainContent'):
+            model = selector.css('.text::text').get()
+            modelnavn = ' '.join(model.split()[:2])
             yield {
+                'model': modelnavn,
                 'pris': selector.css('.price::text').extract_first(),
                 'dato': selector.css('.date::text').extract_first(),
                 'lokation': selector.css('li > span::text').extract_first(),
                 #'modelaar': selector.css('td[title="Modelår"]::text').extract_first()             
             }
+            
 
         #problem med at finde næste side, mulig grund li.next/næste (både og)
         next_page_link = response.css('li.next a::attr(href)').extract_first()
