@@ -13,13 +13,18 @@ class BilspiderSpider(scrapy.Spider):
     name = "bilspider"
 
     def start_requests(self):
-        URL = 'https://www.dba.dk/biler/biler/maerke-peugeot/modelpeugeot-108/'
-        yield scrapy.Request(url=URL, callback=self.response_parser)
+        URLS = [
+        'https://www.dba.dk/biler/biler/maerke-peugeot/modelpeugeot-108/',
+        'https://www.dba.dk/biler/biler/maerke-peugeot/modelpeugeot-108/side-2/',
+        'https://www.dba.dk/biler/biler/maerke-peugeot/modelpeugeot-108/side-3/',
+    ]
+        for URL in URLS:
+            yield scrapy.Request(url=URL, callback=self.response_parser)
 
     def response_parser(self, response):
         for selector in response.css('td.mainContent'):
             model = selector.css('.text::text').get()
-            modelnavn = ' '.join(model.split()[:2])
+            modelnavn = ' '.join(model.split()[:3])
             yield {
                 'model': modelnavn,
                 'pris': selector.css('.price::text').extract_first(),
