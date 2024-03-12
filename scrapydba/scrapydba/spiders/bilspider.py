@@ -7,24 +7,18 @@ from scrapy.signalmanager import dispatcher
 #Test spider for DBA Biler, (kan nemt ændres til anden hjemmeside eller produkt)
 #Test Bil Peugeot 108 (A.R)
 #https://www.dba.dk/biler/biler/maerke-peugeot/modelpeugeot-108/
-#ToDo, HTML site displaying csv data clean
 
 class BilspiderSpider(scrapy.Spider):
     name = "bilspider"
 
     def start_requests(self):
-        URLS = [
-        'https://www.dba.dk/biler/biler/maerke-peugeot/modelpeugeot-108/',
-        'https://www.dba.dk/biler/biler/maerke-peugeot/modelpeugeot-108/side-2/',
-        'https://www.dba.dk/biler/biler/maerke-peugeot/modelpeugeot-108/side-3/',
-    ]
-        for URL in URLS:
-            yield scrapy.Request(url=URL, callback=self.response_parser)
+        URL = 'https://www.dba.dk/biler/biler/maerke-peugeot/modelpeugeot-108/'
+        yield scrapy.Request(url=URL, callback=self.response_parser)
 
     def response_parser(self, response):
         for selector in response.css('td.mainContent'):
             model = selector.css('.text::text').get()
-            modelnavn = ' '.join(model.split()[:3])
+            modelnavn = ' '.join(model.split()[:5])
             yield {
                 'model': modelnavn,
                 'pris': selector.css('.price::text').extract_first(),
@@ -33,9 +27,7 @@ class BilspiderSpider(scrapy.Spider):
                 #'modelaar': selector.css('td[title="Modelår"]::text').extract_first()             
             }
             
-
-        #problem med at finde næste side, mulig grund li.next/næste (både og)
-        next_page_link = response.css('li.next a::attr(href)').extract_first()
+        next_page_link = response.css('.trackClicks.pagination-modern-next.a-page-link::attr(href)').extract_first()
         if next_page_link:
             yield response.follow(next_page_link, callback=self.response_parser)
             
