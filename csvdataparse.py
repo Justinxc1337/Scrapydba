@@ -1,4 +1,8 @@
 import csv
+from datetime import datetime
+
+dt = datetime.now()#.strftime('%Y-%m-%d %H:%M:%S')
+dato = dt.strftime('%d-%m-%y %H:%M:%S')
 
 def read_csv(filename):
     data = []
@@ -8,8 +12,9 @@ def read_csv(filename):
             data.append(row)
     return data
 
+
 def generate_html(data):
-    html_content = "<html><head><title>Data Output</title></head><body><table border='1'><tr><th>Model</th><th>Pris</th><th>Dato</th><th>Lokation</th></tr>"
+    html_content = f"<html><head><title>Data Output</title></head><body><h2>Bildata fra dato: {dato}</h2><table border='1'><tr><th>Model</th><th>Pris</th><th>Dato</th><th>Lokation</th></tr>"
     for item in data:
         html_content += "<tr>"
         html_content += f"<td>{item['model']}</td>"
