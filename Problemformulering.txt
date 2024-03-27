@@ -1,0 +1,12 @@
+Problemformulering:
+
+Hvordan kan Scrapy anvendes til at indsamle og analysere bildata fra dba i Python, og hvilke metoder og teknikker kan optimere denne proces?
+
+Arbejdsspørgsmål:
+
+1. Hvordan kan Scrapy konfigureres til at navigere gennem dynamiske websider med JavaScript-indhold for at indsamle data effektivt?
+
+2. Hvilke strategier kan anvendes til at håndtere anti-scraping foranstaltninger såsom IP-blokering og CAPTCHA, mens man stadig opretholder høj
+hastighed og pålidelighed i dataindsamlingen?
+
+3. Hvordan kan bildata fra dba struktureres og gemmes i en hensigtsmæssig datamodel, så det nemt kan analyseres og sikre at alle biler er unikke?
