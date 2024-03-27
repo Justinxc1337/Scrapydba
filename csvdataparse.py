@@ -12,15 +12,15 @@ def read_csv(filename):
             data.append(row)
     return data
 
-
 def generate_html(data):
-    html_content = f"<html><head><title>Data Output</title></head><body><h2>Bildata fra dato: {dato}</h2><table border='1'><tr><th>Model</th><th>Pris</th><th>Dato</th><th>Lokation</th></tr>"
+    html_content = f"<html><head><title>Data Output</title></head><body><h2>Bildata fra dato: {dato}</h2><table border='1'><tr><th>Model</th><th>Pris</th><th>Dato</th><th>Lokation</th><th>Kilometertal</th></tr>"
     for item in data:
         html_content += "<tr>"
         html_content += f"<td>{item['model']}</td>"
         html_content += f"<td>{item['pris']}</td>"
         html_content += f"<td>{item['dato']}</td>"
         html_content += f"<td>{item['lokation']}</td>"
+        #html_content += f"<td>{item['kilometertal']}</td>"
         html_content += "</tr>"
     html_content += "</table></body></html>"
     return html_content

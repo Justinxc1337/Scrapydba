@@ -1,81 +1,123 @@
 model,pris,dato,lokation
-"Peugeot 108 1,0 e-VTi 72",69.900 kr.,I dag,"
-    7100 Vejle
+"Peugeot 108, 1,0 e-VTi 69",45.000 kr.,30. jan,"
+    5620 Glamsbjerg
 "
-"Peugeot 108 1,0 e-VTi 69",66.900 kr.,I går,"
+"Peugeot 108, 1,0 e-VTi 69",68.500 kr.,I dag,"
+    7160 Tørring
+"
+"Peugeot 108 1,0 e-VTi 72",94.604 kr.,I dag,"
+    7730 Hanstholm
+"
+"Peugeot 108 1,0 e-VTi 69",63.900 kr.,I dag,"
+    4000 Roskilde
+"
+"Peugeot 108 1,0 e-VTi 69",72.490 kr.,I dag,"
+    8920 Randers NV
+"
+"Peugeot 108 1,0 e-VTi 69",74.800 kr.,I dag,"
+    4700 Næstved
+"
+"Peugeot 108 1,0 e-VTi 72",89.900 kr.,I dag,"
+    8600 Silkeborg
+"
+"Peugeot 108, 1,0 e-VTi 69",37.500 kr.,I går,"
+    3000 Helsingør
+"
+"Peugeot 108 1,0 e-VTi 69",58.900 kr.,I går,"
+    7500 Holstebro
+"
+"Peugeot 108 1,0 e-VTi 72",89.700 kr.,I går,"
+    2630 Taastrup
+"
+"Peugeot 108 1,0 e-VTi 69",49.800 kr.,I går,"
+    5220 Odense SØ
+"
+"Peugeot 108 1,0 e-VTi 69",63.900 kr.,25. mar,"
     4300 Holbæk
 "
-"Peugeot 108 1,0 e-VTi 69",39.900 kr.,I går,"
+"Peugeot 108 1,0 e-VTi 69",39.900 kr.,25. mar,"
+    9310 Vodskov
+"
+"Peugeot 108 1,0 e-VTi 69",39.900 kr.,25. mar,"
     8620 Kjellerup
 "
-"Peugeot 108 1,0 e-VTi 72",114.900 kr.,10. mar,"
+"Peugeot 108 1,0 e-VTi 69",69.900 kr.,25. mar,"
+    8800 Viborg
+"
+"Peugeot 108 1,0 e-VTi 69",39.000 kr.,24. mar,"
+    3520 Farum
+"
+"Peugeot 108 1,0 e-VTi 72",114.900 kr.,24. mar,"
     5600 Faaborg
 "
-"Peugeot 108, 1,0 e-VTi 69",45.900 kr.,10. mar,"
-    7800 Skive
+"Peugeot 108 1,2 VTi 82",59.900 kr.,23. mar,"
+    7000 Fredericia
 "
-"Peugeot 108 1,0 e-VTi 69",59.900 kr.,9. mar,"
+"Peugeot 108 1,0 e-VTi 69",59.900 kr.,23. mar,"
     4600 Køge
 "
-"Peugeot 108 1,0 e-VTi 72",79.999 kr.,9. mar,"
-    8381 Tilst
-"
-"Peugeot 108 1,0 e-VTi 69",52.900 kr.,8. mar,"
+"Peugeot 108 1,0 e-VTi 69",52.900 kr.,22. mar,"
     2880 Bagsværd
 "
-"Peugeot 108 1,0 e-VTi 72",99.800 kr.,8. mar,"
+"Peugeot 108, 1,0 e-VTi 69",70.000 kr.,22. mar,"
+    2450 København SV
+"
+"Peugeot 108 1,0 e-VTi 72",99.800 kr.,22. mar,"
     6270 Tønder
 "
-"Peugeot 108 1,0 e-VTi 69",79.800 kr.,8. mar,"
-    4700 Næstved
+"Peugeot 108 1,0 e-VTi 69",68.900 kr.,21. mar,"
+    9400 Nørresundby
+"
+"Peugeot 108 1,0 e-VTi 72",89.800 kr.,21. mar,"
+    3630 Jægerspris
+"
+"Peugeot 108 1,0 e-VTi 69",49.800 kr.,20. mar,"
+    3480 Fredensborg
+"
+"Peugeot 108 1,2 VTi 82",49.800 kr.,19. mar,"
+    6710 Esbjerg V
+"
+"Peugeot 108, 1,0 e-VTi 72",550.000 kr.,19. mar,"
+    8000 Aarhus C
+"
+"Peugeot 108 1,0 e-VTi 69",44.999 kr.,18. mar,"
+    4600 Køge
+"
+"Peugeot 108 1,0 e-VTi 69",74.900 kr.,18. mar,"
+    4300 Holbæk
+"
+"Peugeot 108 1,0 e-VTi 69",44.900 kr.,17. mar,"
+    7000 Fredericia
+"
+"Peugeot 108 1,0 VTi 69",54.980 kr.,17. mar,"
+    5464 Brenderup Fyn
+"
+"Peugeot 108 1,0 e-VTi 72",94.900 kr.,15. mar,"
+    8300 Odder
+"
+"Peugeot 108 1,0 e-VTi 69",59.900 kr.,15. mar,"
+    6000 Kolding
+"
+"Peugeot 108, 1,0 e-VTi 69",65.000 kr.,13. mar,"
+    2500 Valby
+"
+"Peugeot 108 1,0 e-VTi 72",69.900 kr.,12. mar,"
+    7100 Vejle
 "
 "Peugeot 108, 1,0 e-VTi 69",49.999 kr.,7. mar,"
     8260 Viby J
 "
-"Peugeot 108 1,0 e-VTi 69",68.900 kr.,7. mar,"
-    9400 Nørresundby
-"
-"Peugeot 108 1,0 e-VTi 69",63.500 kr.,7. mar,"
+"Peugeot 108 1,0 e-VTi 69",39.000 kr.,7. mar,"
     5700 Svendborg
-"
-"Peugeot 108 1,0 e-VTi 72",94.800 kr.,7. mar,"
-    3630 Jægerspris
-"
-"Peugeot 108 1,2 VTi 82",59.900 kr.,6. mar,"
-    7000 Fredericia
 "
 "Peugeot 108 1,0 e-VTi 69",55.900 kr.,6. mar,"
     9310 Vodskov
 "
-"Peugeot 108 1,0 e-VTi 69",59.800 kr.,5. mar,"
-    4700 Næstved
-"
-"Peugeot 108 1,2 VTi 82",49.800 kr.,5. mar,"
-    6710 Esbjerg V
-"
-"Peugeot 108, 1,0 e-VTi 69",49.999 kr.,4. mar,"
-    2605 Brøndby
-"
-"Peugeot 108 1,0 e-VTi 69",78.900 kr.,4. mar,"
-    4300 Holbæk
-"
-"Peugeot 108 1,0 VTi 69",54.980 kr.,3. mar,"
-    5464 Brenderup Fyn
+"Peugeot 108, 1,0 e-VTi 72",899 kr.,5. mar,"
+    9000 Aalborg
 "
 "Peugeot 108 1,0 e-VTi 72",78.800 kr.,1. mar,"
     5500 Middelfart
-"
-"Peugeot 108 1,0 e-VTi 72",94.900 kr.,1. mar,"
-    8300 Odder
-"
-"Peugeot 108 1,0 e-VTi 69",54.900 kr.,28. feb,"
-    7120 Vejle Øst
-"
-"Peugeot 108 1,0 e-VTi 69",63.900 kr.,28. feb,"
-    4000 Roskilde
-"
-"Peugeot 108 1,0 e-VTi 69",74.800 kr.,28. feb,"
-    4700 Næstved
 "
 "Peugeot 108 1,0 e-VTi 69",42.999 kr.,27. feb,"
     3600 Frederikssund
@@ -83,29 +125,20 @@ model,pris,dato,lokation
 "Peugeot 108 1,0 e-VTi 69",79.400 kr.,26. feb,"
     8940 Randers SV
 "
-"Peugeot 108 1,0 e-VTi 72",104.995 kr.,22. feb,"
+"Peugeot 108 1,0 e-VTi 72",99.995 kr.,22. feb,"
     8600 Silkeborg
 "
 "Peugeot 108 1,0 e-VTi 69",83.900 kr.,22. feb,"
     8300 Odder
 "
-"Peugeot 108, 1,0 e-VTi 69",49.999 kr.,21. feb,"
-    6000 Kolding
-"
-"Peugeot 108 1,0 e-VTi 69",74.900 kr.,21. feb,"
-    4600 Køge
-"
-"Peugeot 108, 1,0 e-VTi 69",74.500 kr.,17. feb,"
-    9460 Brovst
-"
-"Peugeot 108 1,0 e-VTi 72",99.800 kr.,11. feb,"
-    4600 Køge
-"
-"Peugeot 108 1,0 e-VTi 69",59.900 kr.,8. feb,"
+"Peugeot 108 1,0 e-VTi 69",57.900 kr.,8. feb,"
     8450 Hammel
 "
 "Peugeot 108 1,0 e-VTi 69",41.900 kr.,6. feb,"
     6100 Haderslev
+"
+"Peugeot 108, 1,0 e-VTi 69",45.000 kr.,30. jan,"
+    5620 Glamsbjerg
 "
 "Peugeot 108 1,0 e-VTi 69",59.900 kr.,24. jan,"
     4930 Maribo
@@ -113,20 +146,14 @@ model,pris,dato,lokation
 "Peugeot 108 1,0 e-VTi 69",74.900 kr.,20. jan,"
     4100 Ringsted
 "
+"Peugeot 108, 1,0 e-VTi 72",77.500 kr.,11. jan,"
+    8654 Bryrup
+"
 "Peugeot 108 1,0 e-VTi 69",49.900 kr.,7. dec,"
     5220 Odense SØ
 "
 "Peugeot 108 1,0 e-VTi 69",73.800 kr.,29. nov,"
     5500 Middelfart
-"
-"Peugeot 108 1,0 e-VTi 69",56.700 kr.,3. nov,"
-    2630 Taastrup
-"
-"Peugeot 108 1,0 e-VTi 72",89.900 kr.,1. nov,"
-    8800 Viborg
-"
-"Peugeot 108, 1,0 e-VTi 69",50.000 kr.,22. okt,"
-    8783 Hornsyld
 "
 "Peugeot 108 1,0 e-VTi 72",94.900 kr.,22. sep,"
     6760 Ribe
