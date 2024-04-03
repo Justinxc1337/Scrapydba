@@ -1,4 +1,3 @@
-import csv
 import sqlite3
 import scrapy
 from scrapy import signals
