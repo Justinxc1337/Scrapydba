@@ -23,7 +23,11 @@ def read_database():
     return data
 
 def generate_html(data):
-    html_content = "<html><head><title>Data Output</title></head><body>"
+    css_link = '<link rel="stylesheet" type="text/css" href="styles.css">'
+
+    html_content = "<html><head><title> Peugeot-108 Bil Data</title>"
+    html_content += css_link
+    html_content += "</head><body>"
     
     
     # Iterate through each table's data
