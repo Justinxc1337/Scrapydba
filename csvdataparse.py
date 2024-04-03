@@ -20,7 +20,6 @@ def generate_html(data):
         html_content += f"<td>{item['pris']}</td>"
         html_content += f"<td>{item['dato']}</td>"
         html_content += f"<td>{item['lokation']}</td>"
-        #html_content += f"<td>{item['kilometertal']}</td>"
         html_content += "</tr>"
     html_content += "</table></body></html>"
     return html_content

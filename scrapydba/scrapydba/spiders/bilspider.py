@@ -23,9 +23,7 @@ class BilspiderSpider(scrapy.Spider):
                 'model': modelnavn,
                 'pris': selector.css('.price::text').extract_first(),
                 'dato': selector.css('.date::text').extract_first(),
-                'lokation': selector.css('li > span::text').extract_first(),
-                #'kilometertal': selector.css('td.noWrap.listingColumn::text').get(),
-                #'modelaar': selector.css('td[title="Modelår"]::text').extract_first()             
+                'lokation': selector.css('li > span::text').extract_first(),             
             }
             
         next_page_link = response.css('.trackClicks.pagination-modern-next.a-page-link::attr(href)').extract_first()
