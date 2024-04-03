@@ -64,15 +64,7 @@ def bil_spider_result():
     crawler_process.start()
     
     create_database_table(biler_results)
-    write_to_csv(biler_results)
     return biler_results
-
-def write_to_csv(data):
-    keys = data[0].keys()
-    with open('bil_data.csv', 'w', newline='', encoding='utf-8') as output_file_name:
-        writer = csv.DictWriter(output_file_name, keys)
-        writer.writeheader()
-        writer.writerows(data)
 
 if __name__ == '__main__':
     bil_data = bil_spider_result()
