@@ -46,13 +46,17 @@ def generate_html(data):
         
         # Add table with data
         table_data = table_info['table_data']
-        html_content += "<table border='1'><tr><th>Model</th><th>Pris</th><th>Dato</th><th>Lokation</th></tr>"
+        html_content += "<table border='1'><tr><th>Model</th><th>Pris</th><th>Dato</th><th>Lokation</th><th>kilometer</th><th>farve</th><th>modelår</th><th>brændstof</th></tr>"
         for item in table_data:
             html_content += "<tr>"
             html_content += f"<td>{item['model']}</td>"
             html_content += f"<td>{item['pris']}</td>"
             html_content += f"<td>{item['dato']}</td>"
             html_content += f"<td>{item['lokation']}</td>"
+            html_content += f"<td>{item['kilometertal']}</td>"
+            html_content += f"<td>{item['farve']}</td>"
+            html_content += f"<td>{item['modelår']}</td>"
+            html_content += f"<td>{item['brændstof']}</td>"
             html_content += "</tr>"
         html_content += "</table>"
     
