@@ -1,3 +1,7 @@
+"""
+
+# skal ikke længere bruges til programmet da vi er overgået til dbdataparse.py
+
 import csv
 from datetime import datetime
 
@@ -13,7 +17,7 @@ def read_csv(filename):
     return data
 
 def generate_html(data):
-    html_content = f"<html><head><title>Data Output</title></head><body><h2>Bildata fra dato: {dato}</h2><table border='1'><tr><th>Model</th><th>Pris</th><th>Dato</th><th>Lokation</th><th>Kilometertal</th></tr>"
+    html_content = f"<html><head><title>Data Output</title></head><body><h2>Bildata fra dato: {dato}</h2><table border='1'><tr><th>Model</th><th>Pris</th><th>Dato</th><th>Lokation</th></tr>"
     for item in data:
         html_content += "<tr>"
         html_content += f"<td>{item['model']}</td>"
@@ -32,3 +36,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+"""

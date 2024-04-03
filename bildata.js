@@ -1,3 +1,7 @@
+/*
+
+# skal ikke længere bruges til programmet da vi er overgået til dbdataparse.py
+
 // secondary html parser, not used in the final project (csvdataparse.py is used instead)
 
 var dontask = $.csv.toObjects('bildata.csv');
@@ -25,3 +29,5 @@ fetch('bil_data.csv')
             sectionElement.appendChild(rowElement);
         });
     });
+
+*/
