@@ -6,4 +6,8 @@ class ScrapydbaItem(scrapy.Item):
     pris = scrapy.Field()
     dato = scrapy.Field()
     lokation = scrapy.Field()
+    kilometer = scrapy.Field()
+    farve = scrapy.Field()
+    modelår = scrapy.Field()
+    brændstof = scrapy.Field()
     pass
