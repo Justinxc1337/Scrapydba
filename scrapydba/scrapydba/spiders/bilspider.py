@@ -14,9 +14,8 @@ class BilspiderSpider(scrapy.Spider):
 
 
     def parse(self, response):
-        # Extract links to individual car product pages
-        car_links = response.css('.listingLink::attr(href)').extract()
-        for link in car_links:
+        bil_link = response.css('.listingLink::attr(href)').extract()
+        for link in bil_link:
             yield response.follow(link, callback=self.parse_car)
 
     def parse_car(self, response):
@@ -27,17 +26,20 @@ class BilspiderSpider(scrapy.Spider):
             value = dt_element.xpath('following-sibling::dd[1]/text()').get().strip()
             data[key] = value
 
-        # Extracting specific fields
         model = data.get('Mærke og model')
-        pris = data.get('Brændstof')
-        modelår = data.get('Service')
+        pris = response.css('.price-tag::text').get().strip()
+        brændstof = data.get('Brændstof')
+        modelår = data.get('Modelår')
         kilometer = data.get('Antal km')
+        service = data.get('Service')
 
         yield {
             'model': model,
             'pris': pris,
+            'brændstof': brændstof,
             'modelår': modelår,
-            'kilometer': kilometer
+            'kilometer': kilometer,
+            'service': service
         }
             
         next_page_link = response.css('.trackClicks.pagination-modern-next.a-page-link::attr(href)').get()
