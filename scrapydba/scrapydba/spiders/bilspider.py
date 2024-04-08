@@ -10,25 +10,37 @@ from scrapy.signalmanager import dispatcher
 
 class BilspiderSpider(scrapy.Spider):
     name = "bilspider"
+    start_urls = ['https://www.dba.dk/biler/biler/maerke-peugeot/modelpeugeot-108/']
 
-    def start_requests(self):
-        URL = 'https://www.dba.dk/biler/biler/maerke-peugeot/modelpeugeot-108/'
-        yield scrapy.Request(url=URL, callback=self.response_parser)
 
-    def response_parser(self, response):
-        for selector in response.css('td.mainContent'):
-            model = selector.css('.text::text').get()
-            modelnavn = ' '.join(model.split()[:5])
-            yield {
-                'model': modelnavn,
-                'pris': selector.css('.price::text').extract_first(),
-                'dato': selector.css('.date::text').extract_first(),
-                'lokation': selector.css('li > span::text').extract_first(),
-                #'kilometertal': selector.css('td.noWrap.listingColumn::text').get(),
-                #'modelaar': selector.css('td[title="Modelår"]::text').extract_first()             
-            }
+    def parse(self, response):
+        # Extract links to individual car product pages
+        car_links = response.css('.listingLink::attr(href)').extract()
+        for link in car_links:
+            yield response.follow(link, callback=self.parse_car)
+
+    def parse_car(self, response):
+        data = {}
+        dl_elements = response.css('.vip-matrix-data dl dt')
+        for dt_element in dl_elements:
+            key = dt_element.css('::text').get().strip()
+            value = dt_element.xpath('following-sibling::dd[1]/text()').get().strip()
+            data[key] = value
+
+        # Extracting specific fields
+        model = data.get('Mærke og model')
+        pris = data.get('Brændstof')
+        modelår = data.get('Service')
+        kilometer = data.get('Antal km')
+
+        yield {
+            'model': model,
+            'pris': pris,
+            'modelår': modelår,
+            'kilometer': kilometer
+        }
             
-        next_page_link = response.css('.trackClicks.pagination-modern-next.a-page-link::attr(href)').extract_first()
+        next_page_link = response.css('.trackClicks.pagination-modern-next.a-page-link::attr(href)').get()
         if next_page_link:
             yield response.follow(next_page_link, callback=self.response_parser)
             
