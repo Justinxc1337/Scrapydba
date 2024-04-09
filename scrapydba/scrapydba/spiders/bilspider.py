@@ -3,6 +3,7 @@ import scrapy
 from scrapy import signals
 from scrapy.crawler import CrawlerProcess
 from scrapy.signalmanager import dispatcher
+import sqlite3
 
 #Test spider for DBA Biler, (kan nemt ændres til anden hjemmeside eller produkt)
 #Test Bil Peugeot 108 (A.R)
