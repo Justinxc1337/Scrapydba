@@ -17,7 +17,7 @@ class BilspiderSpider(scrapy.Spider):
     def __init__(self):
         super(BilspiderSpider, self).__init__()
 
-        self.conn = sqlite3.connect('bildatabase.db')
+        self.conn = sqlite3.connect('bildb.db')
         self.c = self.conn.cursor()
         self.c.execute('''
             CREATE TABLE IF NOT EXISTS cars (
