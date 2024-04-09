@@ -5,6 +5,7 @@ from scrapy.crawler import CrawlerProcess
 from scrapy.signalmanager import dispatcher
 import sqlite3
 
+
 #Test spider for DBA Biler, (kan nemt ændres til anden hjemmeside eller produkt)
 #Test Bil Peugeot 108 (A.R)
 #https://www.dba.dk/biler/biler/maerke-peugeot/modelpeugeot-108/
@@ -13,6 +14,23 @@ class BilspiderSpider(scrapy.Spider):
     name = "bilspider"
     start_urls = ['https://www.dba.dk/biler/biler/maerke-peugeot/modelpeugeot-108/']
 
+    def __init__(self):
+        super(BilspiderSpider, self).__init__()
+
+        self.conn = sqlite3.connect('bildatabase.db')
+        self.c = self.conn.cursor()
+        self.c.execute('''
+            CREATE TABLE IF NOT EXISTS cars (
+                model TEXT,
+                pris TEXT,
+                farve TEXT,
+                brændstof TEXT,
+                modelår TEXT,
+                kilometer TEXT,
+                service TEXT,
+                UNIQUE(model, pris, farve, brændstof, modelår, kilometer, service)
+            )
+        ''')
 
     def parse(self, response):
         bil_link = response.css('.listingLink::attr(href)').extract()
@@ -44,10 +62,19 @@ class BilspiderSpider(scrapy.Spider):
             'kilometer': kilometer,
             'service': service
         }
+        
+        self.c.execute('''
+            INSERT OR IGNORE INTO cars (model, pris, farve, brændstof, modelår, kilometer, service)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+        ''', (model, pris, farve, brændstof, modelår, kilometer, service))
+        self.conn.commit()
             
-        next_page_link = response.css('.trackClicks.pagination-modern-next.a-page-link::attr(href)').get()
-        if next_page_link:
-            yield response.follow(next_page_link, callback=self.response_parser)
+    def closed(self, reason):
+        self.conn.close()
+        
+        #next_page_link = response.css('.trackClicks.pagination-modern-next.a-page-link::attr(href)').get()
+        #if next_page_link:
+            #yield response.follow(next_page_link, callback=self.response_parser)
             
 def bil_spider_result():
     biler_results = []
@@ -65,8 +92,8 @@ def bil_spider_result():
 if __name__ == '__main__':
     bil_data=bil_spider_result()
 
-    keys = bil_data[0].keys()
-    with open('bil_data.csv', 'w', newline='', encoding='utf-8') as output_file_name:
-        writer = csv.DictWriter(output_file_name, keys)
-        writer.writeheader()
-        writer.writerows(bil_data)
+    #keys = bil_data[0].keys()
+    #with open('bil_data.csv', 'w', newline='', encoding='utf-8') as output_file_name:
+        #writer = csv.DictWriter(output_file_name, keys)
+        #writer.writeheader()
+        #writer.writerows(bil_data)
