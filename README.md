@@ -12,6 +12,7 @@ Free to use and modify by all parties without CC. <br />
 * python csvdataparse.py <br />
 ^ Creates a HTML for better visual over data
 
+![alt text](image.png)
 
 <br />
 <br />

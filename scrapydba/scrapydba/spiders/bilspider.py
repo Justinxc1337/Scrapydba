@@ -9,6 +9,7 @@ import sqlite3
 #Test spider for DBA Biler, (kan nemt ændres til anden hjemmeside eller produkt)
 #Test Bil Peugeot 108 (A.R)
 #https://www.dba.dk/biler/biler/maerke-peugeot/modelpeugeot-108/
+#Database completely fucked if run again with same name
 
 class BilspiderSpider(scrapy.Spider):
     name = "bilspider"
