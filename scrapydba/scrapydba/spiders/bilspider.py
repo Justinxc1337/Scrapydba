@@ -46,8 +46,14 @@ class BilspiderSpider(scrapy.Spider):
         dato = response.xpath('//div[@class="vip-listing-info"]/span/text()').get()
         dato = dato.replace("Annonce oprettet:", "").strip() if dato else None
 
-        # Extracting location = virker ikke da der er forskellige placeringer på siden
-        lokation = response.xpath('//*[@id="business-card"]/div[2]/div[2]/div[2]/div[1]/div/p/text()').get()
+        # Extracting location = virker nogenlunde, men der er forskellige placeringer på siden
+        lokation_part1 = response.xpath('//*[@id="business-card"]/div[2]/div[2]/div[2]/div[1]/div/p/span[1]/text()').get()
+        lokation_part1 = response.xpath('//*[@id="business-card"]/div[2]/div[2]/div[2]/div[1]/div/a/p/span[1]/text()').get() if not lokation_part1 else lokation_part1
+        
+        lokation_part2 = response.xpath('//*[@id="business-card"]/div[2]/div[2]/div[2]/div[1]/div/p/span[2]/text()').get()
+        lokation_part2 = response.xpath('//*[@id="business-card"]/div[2]/div[2]/div[2]/div[1]/div/a/p/span[2]/text()').get() if not lokation_part2 else lokation_part2
+        
+        lokation = f"{lokation_part1.strip()} {lokation_part2.strip()}" if lokation_part1 and lokation_part2 else None
 
         # Extracting kilometertal = virker ikke da der er forskellige placeringer på siden - hvor den blander kilometertal med modelår, farve og andre ting
         kilometertal = response.xpath('//*[@id="content"]/div[2]/article/div[5]/dl/dd[5]/text()').get()
