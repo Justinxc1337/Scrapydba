@@ -1,23 +1,23 @@
-model,pris,brændstof,modelår,kilometer,service
-"Peugeot 108 1,0 e-VTi 69 Active",70.000 kr.,Benzin,2016,70.000,Service ok
-"Peugeot 108 1,0 e-VTi 69 Active",59.900 kr.,Benzin,2015,89.500,
-"Peugeot 108 1,0 e-VTi 69 Allure",68.900 kr.,Benzin,2016,85.000,
-"Peugeot 108 1,0 e-VTi 72 Allure+",74.999 kr.,Benzin,2019,111.000,
-"Peugeot 108 1,0 e-VTi 69 Access",49.800 kr.,Benzin,2015,154.000,
-"Peugeot 108 1,0 e-VTi 72 Selection",99.800 kr.,Benzin,2021,52.000,
-"Peugeot 108 1,2 VTi 82 Active",12.348 kr.,Benzin,2014,105.000,Service ok
-"Peugeot 108 1,0 e-VTi 69 Access",55.000 kr.,Benzin,2014,116.000,
-"Peugeot 108 1,0 e-VTi 69 Active TOP!",39.000 kr.,Benzin,2017,227.000,Service ok
-"Peugeot 108 1,0 e-VTi 72 Final Edition",114.900 kr.,Benzin,2022,17.200,
-"Peugeot 108 1,0 e-VTi 69 Active",45.000 kr.,Benzin,2015,169,Service ok
-"Peugeot 108 1,0 e-VTi 69 Access",49.800 kr.,Benzin,2014,123.000,Service ok
-"Peugeot 108 1,0 e-VTi 69 Active TOP!",49.500 kr.,Benzin,2014,185.000,
-"Peugeot 108 1,0 e-VTi 69 Active",60.000 kr.,Benzin,2014,55.700,
-"Peugeot 108 1,0 e-VTi 69 Allure",69.800 kr.,Benzin,2017,78.000,
-"Peugeot 108 1,0 e-VTi 72",89.990 kr.,Benzin,2019,39.000,Service ok
-"Peugeot 108 1,0 e-VTi 69 Active",49.700 kr.,Benzin,2015,154.000,
-"Peugeot 108 1,0 e-VTi 69 Active",63.900 kr.,Benzin,2015,76.000,
-"Peugeot 108 1,2 VTi 82 Active",59.900 kr.,Benzin,2014,99.000,
-"Peugeot 108 1,0 e-VTi 69 Access",45.000 kr.,Benzin,2014,137.795,Service ok
-"Peugeot 108 1,0 e-VTi 69 Active",74.900 kr.,Benzin,2015,68.000,
-"Peugeot 108 1,2 VTi 82 Active",49.800 kr.,Benzin,2014,124.000,
+model,pris,farve,brændstof,modelår,kilometer,service
+"Peugeot 108 1,0 e-VTi 69 Active",60.000 kr.,Hvid,Benzin,2014,55.700,
+"Peugeot 108 1,0 e-VTi 69 Active",45.000 kr.,Hvid,Benzin,2015,169,Service ok
+"Peugeot 108 1,0 e-VTi 69 Access",49.800 kr.,Sølvmetal,Benzin,2015,154.000,
+"Peugeot 108 1,0 e-VTi 72",89.990 kr.,Hvid,Benzin,2019,39.000,Service ok
+"Peugeot 108 1,0 e-VTi 69 Active TOP!",49.500 kr.,Kobbermetal,Benzin,2014,185.000,
+"Peugeot 108 1,0 e-VTi 69 Allure",69.800 kr.,Gråmetal,Benzin,2017,78.000,
+"Peugeot 108 1,2 VTi 82 Active",49.800 kr.,Koksmetal,Benzin,2014,124.000,
+"Peugeot 108 1,0 e-VTi 69 Access",45.000 kr.,Rød,Benzin,2014,137.795,Service ok
+"Peugeot 108 1,0 e-VTi 69 Active",70.000 kr.,Grå,Benzin,2016,70.000,Service ok
+"Peugeot 108 1,0 e-VTi 69 Allure",68.900 kr.,Hvid,Benzin,2016,85.000,
+"Peugeot 108 1,0 e-VTi 72 Selection",99.800 kr.,Koksmetal,Benzin,2021,52.000,
+"Peugeot 108 1,0 e-VTi 72 Allure+",74.999 kr.,Hvid,Benzin,2019,111.000,
+"Peugeot 108 1,2 VTi 82 Active",1.234 kr.,Sort,Benzin,2014,105.000,Service ok
+"Peugeot 108 1,0 e-VTi 69 Active",59.900 kr.,Rød,Benzin,2015,89.500,
+"Peugeot 108 1,0 e-VTi 69 Active",49.700 kr.,Sølvmetal,Benzin,2015,154.000,
+"Peugeot 108 1,2 VTi 82 Active",59.900 kr.,,Benzin,2014,99.000,
+"Peugeot 108 1,0 e-VTi 69 Access",55.000 kr.,Hvid,Benzin,2014,116.000,
+"Peugeot 108 1,0 e-VTi 72 Final Edition",114.900 kr.,,Benzin,2022,17.200,
+"Peugeot 108 1,0 e-VTi 69 Active TOP!",39.000 kr.,Hvid,Benzin,2017,227.000,Service ok
+"Peugeot 108 1,0 e-VTi 69 Access",49.800 kr.,Sort,Benzin,2014,123.000,Service ok
+"Peugeot 108 1,0 e-VTi 69 Active",63.900 kr.,,Benzin,2015,76.000,
+"Peugeot 108 1,0 e-VTi 69 Griffe",89.900 kr.,Sølvmetal,Benzin,2017,40.000,

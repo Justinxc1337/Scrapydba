@@ -28,6 +28,7 @@ class BilspiderSpider(scrapy.Spider):
 
         model = data.get('Mærke og model')
         pris = response.css('.price-tag::text').get().strip()
+        farve = data.get('Farve')
         brændstof = data.get('Brændstof')
         modelår = data.get('Modelår')
         kilometer = data.get('Antal km')
@@ -36,6 +37,7 @@ class BilspiderSpider(scrapy.Spider):
         yield {
             'model': model,
             'pris': pris,
+            'farve': farve,
             'brændstof': brændstof,
             'modelår': modelår,
             'kilometer': kilometer,
