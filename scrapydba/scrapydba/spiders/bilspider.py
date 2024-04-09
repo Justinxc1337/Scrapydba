@@ -35,21 +35,21 @@ class BilspiderSpider(scrapy.Spider):
             yield response.follow(next_page_link, callback=self.parse_front_page)
 
     def parse_advertisement(self, response):
-        # Extracting model name
+        # Extracting model name = virker
         modelnavn = response.xpath('//*[@id="content"]/div[2]/article/div[4]/dl/dd[1]/text()').get()
         modelnavn = response.xpath('//*[@id="content"]/div[2]/article/div[5]/dl/dd[1]/text()').get() if not modelnavn else modelnavn
 
-        # Extracting price
+        # Extracting price = virker
         pris = response.xpath('//div[@class="vip-heading-bar row-fluid"]/div[@class="span8"]/div/div[2]/span/text()').get()
 
-        # Extracting date
+        # Extracting date = virker
         dato = response.xpath('//div[@class="vip-listing-info"]/span/text()').get()
         dato = dato.replace("Annonce oprettet:", "").strip() if dato else None
 
-        # Extracting location
+        # Extracting location = virker ikke da der er forskellige placeringer på siden
         lokation = response.xpath('//*[@id="business-card"]/div[2]/div[2]/div[2]/div[1]/div/p/text()').get()
 
-        # Extracting kilometertal
+        # Extracting kilometertal = virker ikke da der er forskellige placeringer på siden - hvor den blander kilometertal med modelår, farve og andre ting
         kilometertal = response.xpath('//*[@id="content"]/div[2]/article/div[5]/dl/dd[5]/text()').get()
         if kilometertal:
             match = re.search(r'\b(\d{1,3}(?:[.,\s]\d{3})+)\b', kilometertal)
@@ -58,13 +58,13 @@ class BilspiderSpider(scrapy.Spider):
                 if kilometertal <= 5000:
                     return
 
-        # Extracting color
-        farve = response.xpath('//div[@class="vip-matrix-data"]/dl/dd[16]/text()').get()
+        # Extracting color = virker ikke
+        farve = response.xpath('//*[@id="content"]/div[2]/article/div[5]/dl/dd[6]/text()').get()
 
-        # Extracting model year
+        # Extracting model year = virker ikke
         modelår = response.xpath('//*[@id="content"]/div[2]/article/div[5]/dl/dd[4]/text()').get()
 
-        # Extracting fuel type
+        # Extracting fuel type = virker
         brændstof = response.xpath('//*[@id="content"]/div[2]/article/div[5]/dl/dd[2]/text()').get()
         brændstof = response.xpath('//*[@id="content"]/div[2]/article/div[4]/dl/dd[2]/text()').get() if not brændstof else brændstof
 
