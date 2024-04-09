@@ -1,5 +1,6 @@
 import sqlite3
 import scrapy
+import re
 from scrapy.crawler import CrawlerProcess
 from scrapy.signalmanager import dispatcher
 from scrapy import signals
@@ -34,28 +35,50 @@ class BilspiderSpider(scrapy.Spider):
             yield response.follow(next_page_link, callback=self.parse_front_page)
 
     def parse_advertisement(self, response):
+        # Extracting model name
         modelnavn = response.xpath('//*[@id="content"]/div[2]/article/div[4]/dl/dd[1]/text()').get()
         modelnavn = response.xpath('//*[@id="content"]/div[2]/article/div[5]/dl/dd[1]/text()').get() if not modelnavn else modelnavn
+
+        # Extracting price
         pris = response.xpath('//div[@class="vip-heading-bar row-fluid"]/div[@class="span8"]/div/div[2]/span/text()').get()
+
+        # Extracting date
         dato = response.xpath('//div[@class="vip-listing-info"]/span/text()').get()
+        dato = dato.replace("Annonce oprettet:", "").strip() if dato else None
+
+        # Extracting location
         lokation = response.xpath('//*[@id="business-card"]/div[2]/div[2]/div[2]/div[1]/div/p/text()').get()
-        kilometertal = response.xpath('//div[@class="vip-matrix-data"]/dl/dd[14]/text()').get()
+
+        # Extracting kilometertal
+        kilometertal = response.xpath('//*[@id="content"]/div[2]/article/div[5]/dl/dd[5]/text()').get()
+        if kilometertal:
+            match = re.search(r'\b(\d{1,3}(?:[.,\s]\d{3})+)\b', kilometertal)
+            if match:
+                kilometertal = int(match.group(1).replace('.', '').replace(',', '').replace(' ', ''))
+                if kilometertal <= 5000:
+                    return
+
+        # Extracting color
         farve = response.xpath('//div[@class="vip-matrix-data"]/dl/dd[16]/text()').get()
-        modelår = response.xpath('//div[@class="vip-matrix-data"]/dl/dd[12]/text()').get()
+
+        # Extracting model year
+        modelår = response.xpath('//*[@id="content"]/div[2]/article/div[5]/dl/dd[4]/text()').get()
+
+        # Extracting fuel type
         brændstof = response.xpath('//*[@id="content"]/div[2]/article/div[5]/dl/dd[2]/text()').get()
         brændstof = response.xpath('//*[@id="content"]/div[2]/article/div[4]/dl/dd[2]/text()').get() if not brændstof else brændstof
-        
 
         yield {
             'model': modelnavn.strip() if modelnavn else None,
             'pris': pris.strip() if pris else None,
-            'dato': dato.strip() if dato else None,
+            'dato': dato,
             'lokation': lokation.strip() if lokation else None,
-            'kilometertal': kilometertal.strip() if kilometertal else None,
+            'kilometertal': kilometertal,
             'farve': farve.strip() if farve else None,
             'modelår': modelår.strip() if modelår else None,
             'brændstof': brændstof.strip() if brændstof else None,
     }
+
 
 
 
@@ -91,7 +114,6 @@ def bil_spider_result():
 
     dispatcher.connect(crawler_results, signal=signals.item_scraped)
     
-    # Initialize the WebDriver outside of the spider
     options = Options()
     options.add_experimental_option("detach", True)
     driver = webdriver.Edge(service=Service(EdgeChromiumDriverManager().install()), options=options)
@@ -102,7 +124,6 @@ def bil_spider_result():
     crawler_process.crawl(BilspiderSpider, driver=driver)
     crawler_process.start()
     
-    # Close the WebDriver after crawling is done
     driver.close()
     
     create_database_table(biler_results)
